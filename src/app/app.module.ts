@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ListGenerator } from './services/listGenerator.service'
+import { TodoListComponent } from './components/todoList/todoList.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoListComponent,
   ],
   imports: [
     BrowserModule
