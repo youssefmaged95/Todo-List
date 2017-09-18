@@ -1,3 +1,5 @@
+<input  type="text" placeholder="list name" [(ngModel)]="newList" />
+<button (click)=createList()>Create List</button>
 <div *ngFor="let list of lists; let i = index" >
   <todoList listId={{i}} (remove)="removeList($event)" [title]="list.title" [tasks]="list.tasks" ></todoList>
 </div>

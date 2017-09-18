@@ -34,8 +34,8 @@ export class ListGenerator {
        };
 
        // Add the list to the 'list of todo-lists'
-
        this.lists.push(List);
+       
     }
     return this.lists;
   }
