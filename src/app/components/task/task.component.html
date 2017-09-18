@@ -1,0 +1,7 @@
+  <p *ngIf="editMode=='false'" [style.color]='textColor' >{{title}}</p>
+  <input type="text" *ngIf="editMode=='true'"  [(ngModel)]="title" />
+  <button *ngIf="editMode=='true'" (click)=removeSelf() >Delete</button>
+  <button (click)=toggleCheck() *ngIf="editMode=='false'">
+    <p *ngIf="!checked">check</p>
+    <p *ngIf="checked">uncheck</p>
+  </button>

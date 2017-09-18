@@ -16,7 +16,7 @@ export class AppComponent {
     this.lists = ListGenerator.init(6);
   }
 
-  // Remove the list with index i from the list array
+  // Remove the list at index i from the list array
 
   removeList( i : number ){
     this.lists.splice( i , 1 );

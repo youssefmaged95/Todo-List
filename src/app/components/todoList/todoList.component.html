@@ -1,6 +1,7 @@
 <button (click)=removeSelf() >Delete</button>
+<button (click)=toggleEditMode() >edit</button>
 <h3>{{title}}</h3>
 <div *ngFor="let task of tasks; let i = index" >
-  <h5>{{task.title}}</h5>
+  <task (remove)="removeTask($event)" taskId={{i}} title={{task.title}} editMode={{editMode}} ></task>
 </div>
 ______________________________________________________________________________

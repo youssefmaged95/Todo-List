@@ -12,13 +12,23 @@ export class TodoListComponent {
   @Input() title: string;
   @Input() tasks: any;
   @Input() listId: number;
+  taskTitle : string;
   editMode: boolean;
 
   constructor(){
 
-    // Set edit mode to false
+    // Disable editMode
 
     this.editMode = false;
+    this.taskTitle = this.title;
+  }
+
+  toggleEditMode(){
+    if(this.editMode){
+      this.editMode = false;
+    }else{
+      this.editMode = true;
+    }
   }
 
   removeSelf(){
@@ -26,6 +36,17 @@ export class TodoListComponent {
     // Call parent's removeList( i ) function where i is the index of the list
 
     this.remove.emit(this.listId);
+  }
+
+  removeTask( i : number ){
+
+    // Remove task at index i
+
+    this.tasks.splice( i , 1 );
+  }
+
+  addTask( title : string ){
+
   }
 
 }
