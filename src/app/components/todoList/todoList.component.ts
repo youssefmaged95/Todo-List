@@ -12,16 +12,15 @@ export class TodoListComponent {
   @Input() title: string;
   @Input() tasks: any;
   @Input() listId: number;
-  taskTitle : string;
   editMode: boolean;
-
+  newTask : string;
   constructor(){
 
     // Disable editMode
 
     this.editMode = false;
-    this.taskTitle = this.title;
   }
+
 
   toggleEditMode(){
     if(this.editMode){
@@ -45,8 +44,18 @@ export class TodoListComponent {
     this.tasks.splice( i , 1 );
   }
 
-  addTask( title : string ){
+  addTask(){
 
+    // Create a new task with the input title
+
+    let task = {
+      title : this.newTask,
+    }
+
+    // Add the new task to the list of tasks
+
+    this.tasks.push(task);
+    this.newTask = "";
   }
 
 }
