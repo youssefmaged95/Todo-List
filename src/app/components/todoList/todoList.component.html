@@ -1,4 +1,4 @@
-______________________________________________________________________________
+<!-- ______________________________________________________________________________
 <button (click)=removeSelf() >Delete</button>
 <button (click)=toggleEditMode() >edit</button>
 <h3 *ngIf="!editMode" >{{title}}</h3>
@@ -8,5 +8,36 @@ ______________________________________________________________________________
   <button (click)=addTask() >add</button>
 </div>
 <div *ngFor="let task of tasks; let i = index" >
-  <task (remove)="removeTask($event)" taskId={{i}} title={{task.title}} editMode={{editMode}} ></task>
+  <task (remove)="removeTask($event)" taskId={{i}} title={{task.title}} editMode={{editMode}} ></task> -->
+<!-- </div> -->
+
+<div class="row" style="padding:10px;">
+  <div class="col s12 m12 l12 xl12 white" style="padding:10px;border-radius:4px;">
+    <div class="row" style="padding:10px;border-radius:15px;">
+      <h5 *ngIf="!editMode" class="center grey-text text-darken-4" style="font-weight:900;width:100%;">{{title}}</h5>
+      <input *ngIf="editMode" class="center-align" style="font-weight:900;font-size:18pt;" type="text" [(ngModel)]="title" />
+    </div>
+
+    <div *ngIf="editMode"  >
+      <input style="width:60%;margin-left:10px;" placeholder="New Task" type="text" [(ngModel)]="newTask" />
+      <button style="margin-top:10px;margin-right:7px;float:right;" class="btn-floating  waves-effect waves-light" (click)=addTask() ><i class="material-icons">add</i></button>
+    </div>
+
+      <task *ngFor="let task of tasks; let i = index" (remove)="removeTask($event)" taskId={{i}} title={{task.title}} editMode={{editMode}}></task>
+
+    <div class="row" style="padding:10px 20px 0px 20px">
+      <button (click)=toggleEditMode() *ngIf="!editMode" style="float:right;width:48%;" class="waves-effect waves-light btn grey darken-4" >
+        <!-- <i class="material-icons">edit</i> -->
+        Edit
+      </button>
+      <button (click)=toggleEditMode() *ngIf="editMode" style="float:right;width:48%;" class="waves-effect waves-light btn grey darken-4" >
+        <!-- <i class="material-icons">edit</i> -->
+        Save
+      </button>
+      <button (click)=removeSelf()  style="margin-left:2px;float:left;width:48%;" class=" white-text waves-effect waves-light btn red" >
+        <!-- <i class="material-icons white-text">delete</i> -->
+        Delete
+      </button>
+    </div>
+  </div>
 </div>

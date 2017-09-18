@@ -1,5 +1,17 @@
-<input  type="text" placeholder="list name" [(ngModel)]="newList" />
-<button (click)=createList()>Create List</button>
-<div *ngFor="let list of lists; let i = index" >
-  <todoList listId={{i}} (remove)="removeList($event)" [title]="list.title" [tasks]="list.tasks" ></todoList>
+<div class="row">
+  <div class="col s12 m6 offset-m3  l4 offset-l4">
+    <input  type="text" class="center-align" style="margin-top:30px;color:white;width:100%;font-weight:900;font-size:18pt;" placeholder="New list name" [(ngModel)]="newList" />
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m4 offset-m4  l2 offset-l5">
+    <button class="waves-effect waves-light btn" style="width:100%;margin-bottom:30px;" (click)=createList()>Create List</button>
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let list of lists; let i = index" >
+    <div class="col s12 m6 l3">
+      <todoList listId={{i}} (remove)="removeList($event)" [title]="list.title" [tasks]="list.tasks" ></todoList>
+    </div>
+  </div>
 </div>

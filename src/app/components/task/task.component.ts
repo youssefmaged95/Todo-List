@@ -12,10 +12,11 @@ export class TaskComponent {
   @Input() taskId : number;
   checked : boolean;
   textColor : string;
+  decoration : string;
   constructor(){
     this.editMode=false;
     this.checked=false;
-    this.textColor="#444";
+    this.textColor="#222";
   }
 
   removeSelf(){
@@ -25,10 +26,13 @@ export class TaskComponent {
   toggleCheck(){
     if(this.checked){
       this.checked=false;
-      this.textColor="#444";
+      this.textColor="#222";
+      this.decoration="none";
     }else{
       this.checked=true;
-      this.textColor="#bbb";
+      this.textColor="#aaa";
+      this.decoration="line-through";
     }
+
   }
 }

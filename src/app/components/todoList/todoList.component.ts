@@ -46,16 +46,24 @@ export class TodoListComponent {
 
   addTask(){
 
-    // Create a new task with the input title
+    // Check if task title is empty
 
-    let task = {
-      title : this.newTask,
+    if(this.newTask.length == 0 ){
+      alert("Please enter a task title");
+    }else{
+
+      // Create a new task with the input title
+
+      let task = {
+        title : this.newTask,
+      }
+
+      // Add the new task to the list of tasks
+
+      this.tasks.push(task);
+      this.newTask = "";
     }
 
-    // Add the new task to the list of tasks
-
-    this.tasks.push(task);
-    this.newTask = "";
   }
 
 }
