@@ -1,6 +1,7 @@
 <button (click)=removeSelf() >Delete</button>
 <button (click)=toggleEditMode() >edit</button>
-<h3>{{title}}</h3>
+<h3 *ngIf="!editMode" >{{title}}</h3>
+<input *ngIf="editMode" type="text" [(ngModel)]="title" />
 <div *ngIf="editMode"  >
   <input type="text" [(ngModel)]="newTask" />
   <button (click)=addTask() >add</button>
