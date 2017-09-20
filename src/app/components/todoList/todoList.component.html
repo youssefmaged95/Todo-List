@@ -20,7 +20,7 @@
 
     <div *ngIf="editMode"  >
       <input style="width:60%;margin-left:10px;" placeholder="New Task" type="text" [(ngModel)]="newTask" />
-      <button style="margin-top:10px;margin-right:7px;float:right;" class="btn-floating  waves-effect waves-light" (click)=addTask() ><i class="material-icons">add</i></button>
+      <button style="margin-top:10px;margin-right:9px;float:right;" class="btn-floating  waves-effect waves-light" (click)=addTask() ><i class="material-icons">add</i></button>
     </div>
 
       <task *ngFor="let task of tasks; let i = index" (remove)="removeTask($event)" taskId={{i}} title={{task.title}} editMode={{editMode}}></task>
