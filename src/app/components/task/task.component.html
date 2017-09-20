@@ -8,19 +8,19 @@
 
 <div class="row" >
   <div class="col s10 m10 l10 xl10 ">
-    <button class="titleButton" (click)=toggleCheck() *ngIf="editMode=='false'" >
+    <a class="titleButton" (click)=toggleCheck() *ngIf="editMode=='false'" >
       <p [style.color]='textColor' [style.text-decoration]='decoration' style="font-size:12pt;margin:0;" >{{title}}</p>
-    </button>
+    </a>
     <input type="text" *ngIf="editMode=='true'"  [(ngModel)]="title" />
   </div>
   <div class="col s2 m2 l2 xl2">
-    <button (click)=removeSelf() *ngIf="editMode=='true'" class="imgButton">
+    <a (click)=removeSelf() *ngIf="editMode=='true'" class="imgButton">
       <i class="center red-text material-icons">close</i>
-    </button>
-    <button (click)=toggleCheck() *ngIf="editMode=='false'" class="imgButton">
+    </a>
+    <a (click)=toggleCheck() *ngIf="editMode=='false'" class="imgButton">
       <!-- <img  class="icon" src="../../../assets/done.png" /> -->
       <i *ngIf="!checked" class="material-icons">check</i>
       <i *ngIf="checked"  class="teal-text text-lighten-2 material-icons">check</i>
-    </button>
+    </a>
   </div>
 </div>

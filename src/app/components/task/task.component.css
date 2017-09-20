@@ -4,6 +4,8 @@
   border: none;
   float:right;
   margin-top:12px;
+  color: inherit;
+  cursor: pointer;
 }
 
 .titleButton{
@@ -11,6 +13,7 @@
   background-repeat:no-repeat;
   border: none;
   margin-top:12px;
+  cursor: pointer;
 }
 
 .icon{
