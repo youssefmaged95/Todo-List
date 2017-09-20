@@ -6,9 +6,11 @@
   <p *ngIf="checked">uncheck</p>
 </button> -->
 
-<div class="row">
+<div class="row" >
   <div class="col s10 m10 l10 xl10 ">
-    <p *ngIf="editMode=='false'" [style.color]='textColor' [style.text-decoration]='decoration'  >{{title}}</p>
+    <button class="titleButton" (click)=toggleCheck() *ngIf="editMode=='false'" >
+      <p [style.color]='textColor' [style.text-decoration]='decoration' style="font-size:12pt;margin:0;" >{{title}}</p>
+    </button>
     <input type="text" *ngIf="editMode=='true'"  [(ngModel)]="title" />
   </div>
   <div class="col s2 m2 l2 xl2">

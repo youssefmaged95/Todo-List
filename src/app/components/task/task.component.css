@@ -1,7 +1,15 @@
 .imgButton{
   background-color: Transparent;
   background-repeat:no-repeat;
-  border: none;float:right;
+  border: none;
+  float:right;
+  margin-top:12px;
+}
+
+.titleButton{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
   margin-top:12px;
 }
 
