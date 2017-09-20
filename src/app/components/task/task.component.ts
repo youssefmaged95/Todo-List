@@ -8,13 +8,13 @@ import { Component , Input , Output , EventEmitter} from '@angular/core';
 export class TaskComponent {
   @Output()remove:EventEmitter<number> = new EventEmitter();
   @Input() title : string;
-  @Input() editMode : boolean;
+  @Input() editMode : string;
   @Input() taskId : number;
   checked : boolean;
   textColor : string;
   decoration : string;
   constructor(){
-    this.editMode=false;
+    this.editMode='false';
     this.checked=false;
     this.textColor="#222";
   }
