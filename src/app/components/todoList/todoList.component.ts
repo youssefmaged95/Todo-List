@@ -19,6 +19,8 @@ export class TodoListComponent {
     // Disable editMode
 
     this.editMode = false;
+    
+    this.newTask = "";
   }
 
 
